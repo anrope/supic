@@ -7,7 +7,7 @@ from twisted.internet import reactor
 import parse_query
 
 resource = File('./')
-resource.putChild('parse_query', WSGIResource(reactor, reactor.getThreadPool(), parse_query.supic))
+resource.putChild('parse_query', WSGIResource(reactor, reactor.getThreadPool(), parse_query.Supic()))
 
 factory = Site(resource)
 reactor.listenTCP(8888, factory)
